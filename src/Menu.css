@@ -1,0 +1,21 @@
+.menu-nav {
+  background-color: darkblue;
+}
+
+.menu-ul {
+  display: flex;
+  justify-content: right;
+  background-color: #005670;
+}
+
+.menu-list {
+  background-color: rgba(0, 0, 0, 0.171);
+  padding: 5px 10px;
+  margin: 10px;
+  list-style: none;
+  border-radius: 5px;
+}
+
+.menu-list a {
+  text-decoration: none;
+}

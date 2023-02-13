@@ -1,23 +1,24 @@
 import React from "react";
 import { NavLink } from 'react-router-dom';
 import { useAuth } from "./auth";
+import './Menu.css'
 
 function Menu() {
 
   const auth = useAuth();
 
   return (
-    <nav>
-      <ul>
+    <nav className="menu-nav">
+      <ul className="menu-ul">
         {routes.map(route => {
           if (route.publicOnly && auth.user) return null
           //si la ruta es privada y no estamos autenticados returna null
           if (route.private && !auth.user) return null
           return (
-            <li key={route.to}>
+            <li className="menu-list" key={route.to}>
               <NavLink
                 style={({ isActive }) => ({
-                  color: isActive ? 'purple' : 'blue'
+                  color: isActive ? 'gray' : 'white'
                 })}
                 to={route.to}
               >
