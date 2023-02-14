@@ -18,7 +18,7 @@ function Menu() {
             <li className="menu-list" key={route.to}>
               <NavLink
                 style={({ isActive }) => ({
-                  color: isActive ? 'gray' : 'white'
+                  color: isActive ? 'black' : 'white'
                 })}
                 to={route.to}
               >

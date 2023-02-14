@@ -1,8 +1,11 @@
 import React from "react";
 import { useNavigate, Navigate } from "react-router-dom";
 
+const adminList = ['Irisval', 'RetaxMaster', 'freddier'];
+
 const AuthContext = React.createContext();
 
+//funccion para cerificar si esta AUTENTICADO
 function AuthProvider({ children }) {
   const navigate = useNavigate()
 
@@ -10,8 +13,9 @@ function AuthProvider({ children }) {
   const [user, setUser] = React.useState(null);
 
   const login = ({ username }) => {
+    const isAdmin = adminList.find(admin => admin === username);
     //actualizador del estado
-    setUser({ username })
+    setUser({ username, isAdmin })
     navigate('./profile')
   }
   const logout = () => {
@@ -33,6 +37,7 @@ function useAuth() {
   return auth;
 }
 
+//redireccionar si no esta autenticado
 function AuthRoute(props) {
   const auth = useAuth();
 
